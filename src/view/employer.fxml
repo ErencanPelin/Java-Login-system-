@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="background" prefHeight="500" prefWidth="670" fx:controller="controller.EmployerController" spacing="15">
+    <padding>
+        <Insets top="5" bottom="10"/> 
+    </padding>
+    
+    <Label text="Filters" styleClass="label-header"/>
+    
+    <HBox spacing="10" alignment="CENTER" >
+        <Label text="Name:" styleClass="label"/>
+        <TextField fx:id="nameFilterTf" promptText="Filter by name"/>
+        <Label text="Email:" styleClass="label"/>
+        <TextField fx:id="emailFilterTf" promptText="Filter by email" />
+    </HBox>
+    
+    <Separator/>
+    
+    <TableView fx:id="employeeTV" styleClass="table-view" prefHeight="300" prefWidth="650" items="${controller.employer.employees}">
+        <columns>
+            <TableColumn text="Name" prefWidth="217" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn> 
+            <TableColumn text="Email" prefWidth="217">
+                <cellValueFactory>
+                    <PropertyValueFactory property="email"/>
+                </cellValueFactory>
+            </TableColumn> 
+            <TableColumn text="Phone" prefWidth="217">
+                <cellValueFactory>
+                    <PropertyValueFactory property="phone"/>
+                </cellValueFactory>
+            </TableColumn> 
+        </columns>
+    </TableView>
+    
+    <Separator/>
+    
+    <HBox spacing="10">
+        <padding> 
+            <Insets left="5" right="5"/>
+        </padding> 
+        
+        <Button text="Add" fx:id="addBtn" onAction="#handleAdd" styleClass="button"/> 
+        <Button text="Delete" fx:id="deleteBtn" onAction="#handleDelete" styleClass="button"/> 
+        <Button text="Select" fx:id="selectBtn" onAction="#handleSelect" styleClass="button"/> 
+        <Button text="PAYG" fx:id="PAYGBtn" onAction="#handlePAYG" styleClass="button"/> 
+        <Button text="STP" fx:id="STPBtn" onAction="#handleSTP" styleClass="button"/> 
+        <Button text="Close" fx:id="closeBtn" onAction="#handleClose" styleClass="button"/> 
+    </HBox>
+    
+    <stylesheets>
+            <URL value="@stpfx.css"/>
+    </stylesheets>
+</VBox>

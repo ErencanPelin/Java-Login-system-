@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="background" fx:controller="controller.StpController" prefWidth="650" prefHeight="1000"  spacing="300">    
+    <padding>
+        <Insets top="15" bottom="35"/>
+    </padding>
+    
+    <TableView fx:id="employeeTV" styleClass="table-view" prefHeight="800"  items="${controller.stp.reports}">
+        <columns>
+            <TableColumn text="Name" prefWidth="126" fx:id="nameClm"/>
+            <TableColumn text="Wages" prefWidth="126" fx:id="wagesClm"/>
+            <TableColumn text="Tax" prefWidth="126" fx:id="taxClm"/>
+            <TableColumn text="Net" prefWidth="126" fx:id="netClm"/>
+            <TableColumn text="Super" prefWidth="126" fx:id="superClm"/>
+        </columns>
+    </TableView>
+    
+    <VBox spacing="20">
+        <Separator/>
+
+        <VBox alignment="CENTER">
+            <padding>
+                <Insets right="80" left="80"/>  
+            </padding>
+            <GridPane vgap="10" hgap="10">
+                <Label text="Total Wages:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0"/> 
+                <Label text="Total Net:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1"/> 
+                <Label text="Quater BAS:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="2"/> 
+
+                <Text text="bind" styleClass="text-out" GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="totalWagesTx"/>   
+                <Text text="bind" styleClass="text-out" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="totalNetTx"/>   
+                <Text text="bind" styleClass="text-out" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="quaterBASTx"/>   
+
+                <Label text="Total Tax:" styleClass="label" GridPane.columnIndex="4" GridPane.rowIndex="0"/> 
+                <Label text="Total Super:" styleClass="label" GridPane.columnIndex="4" GridPane.rowIndex="1"/> 
+
+                <Text text="bind" styleClass="text-out" GridPane.columnIndex="5" GridPane.rowIndex="0" fx:id="totaTaxTx"/>   
+                <Text text="bind" styleClass="text-out" GridPane.columnIndex="5" GridPane.rowIndex="1" fx:id="totalSuperTx"/>   
+            </GridPane>
+        </VBox> 
+        
+        <Separator/>
+
+        <VBox alignment="CENTER">
+            <Button text="Close" onAction="#handleClose" styleClass="button"/> 
+        </VBox>   
+    </VBox>
+    
+    <stylesheets>
+            <URL value="@stpfx.css"/>
+    </stylesheets>
+</VBox>

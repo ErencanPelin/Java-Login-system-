@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="background" fx:controller="controller.ErrorController" spacing="35" alignment="CENTER" >    
+    <padding>
+        <Insets top="50" bottom="40" left="70" right="70"/>
+    </padding>    
+    
+    <Label styleClass="label" text="Form Validation Errors"/>
+    <Text styleClass="text-out" text="${controller.error}"/>
+    
+    <Button styleClass="button" onAction="#handleClose" text="Okay"/>     
+    
+    <stylesheets>
+            <URL value="@stpfx.css"/>
+    </stylesheets>
+</VBox>

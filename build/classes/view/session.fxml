@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="background" prefHeight="500" prefWidth="670"   fx:controller="controller.SessionController" >
+        <GridPane hgap="200">
+            <padding>
+                <Insets top="10" right="10" left="20" bottom="40"/> 
+            </padding>
+
+            <Label text="STPFX" styleClass="label-header"/>
+            <Label text="Payroll Management System" GridPane.rowIndex="1"/>
+            <HBox GridPane.columnIndex="1" spacing="10">
+                <Button text="Login" onAction="#handleLogin" styleClass="button"/> 
+                <Button text="Exit" onAction="#handleExit"  styleClass="button" /> 
+            </HBox>
+        </GridPane>     
+
+        <Separator/>
+
+        <GridPane alignment="CENTER" >
+            <ImageView>
+                <image>
+                    <Image url="@stp.jpg"/>
+                </image>
+            </ImageView>     
+        </GridPane>
+    
+    <stylesheets>
+            <URL value="@stpfx.css"/>
+    </stylesheets>
+</VBox>
